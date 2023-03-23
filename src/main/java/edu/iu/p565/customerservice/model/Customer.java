@@ -2,10 +2,17 @@ package edu.iu.p565.customerservice.model;
 
 import java.util.Objects;
 
+import jakarta.validation.constraints.NotEmpty;
+
 
 public class Customer {
     private int id;
+
+    @NotEmpty(message = "name not be empty")
     private String name;
+
+
+    @NotEmpty(message ="msg not bt empty")
     private String email;
 
 
@@ -47,5 +54,12 @@ public class Customer {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, email);
+    }
+
+    public void add(Customer customer) {
+    }
+
+    public int size() {
+        return 0;
     }
 }
